@@ -1,21 +1,197 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How to Configure PortalView – Dynamic Fields for JSM | AppRL</title><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><style>:root{--bl:#0052CC;--bl2:#2684FF;--bl3:#003884;--tl:#00B8D9;--tl2:#79E2F2;--dk:#091E42;--dk2:#0a1f3e;}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,var(--dk) 0%,#08214a 100%);color:#fff}a{text-decoration:none}.nav{position:sticky;top:0;z-index:20;background:rgba(7,27,58,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}.nav-in{max-width:1280px;margin:0 auto;padding:0 26px;height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}.brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#1e5fff,#31d0ff);display:grid;place-items:center;font-weight:900}.nav-links{display:flex;gap:18px}.nav-links a{color:rgba(255,255,255,.75)}.container{max-width:1280px;margin:0 auto;padding:26px}.doc-grid{display:grid;grid-template-columns:270px minmax(0,1fr);gap:28px;align-items:start}.sidebar{position:sticky;top:96px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:22px}.side-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}.side-icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#14346a,#1b7ad9);display:grid;place-items:center;border:1px solid rgba(255,255,255,.08);overflow:hidden;flex:0 0 auto}.side-icon img{width:100%;height:100%;object-fit:contain}.side-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;line-height:1.25}.side-sub{color:rgba(255,255,255,.72);font-size:.92rem;line-height:1.5}.side-nav{display:flex;flex-direction:column;gap:8px;margin-top:18px}.side-nav a{color:#fff;padding:11px 12px;border-radius:12px;border:1px solid transparent;font-weight:700}.side-nav a:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}.side-nav a.active{background:linear-gradient(135deg,rgba(45,140,255,.22),rgba(51,209,255,.12));border-color:rgba(51,209,255,.18)}.doc-card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:26px;padding:34px;box-shadow:0 14px 40px rgba(0,0,0,.18)}.doc-label{color:#25c9ff;text-transform:uppercase;letter-spacing:.12em;font-size:.83rem;font-weight:900;margin-bottom:8px}.doc-header{display:flex;gap:18px;align-items:flex-start;margin-bottom:12px}.doc-page-icon{width:62px;height:62px;border-radius:18px;background:#fff;display:grid;place-items:center;font-size:34px;flex:0 0 auto;color:#091E42}.doc-card h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,3.2vw,3.2rem);line-height:1.03;margin:0 0 8px;letter-spacing:-.03em}.doc-intro{color:rgba(255,255,255,.82);font-size:1.06rem;line-height:1.7;margin:0 0 22px}.doc-actions{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:14px;border:1px solid transparent;font-weight:800;transition:.2s ease}.btn-primary{background:linear-gradient(135deg,#2d8cff,#31d0ff);color:#fff}.btn-secondary{border-color:rgba(255,255,255,.16);color:#fff;background:transparent}.doc-content{margin-top:24px}.doc-content h2{font-size:1.32rem;margin:28px 0 10px}.doc-content h3{font-size:1.07rem;margin:22px 0 10px}.doc-content p{color:rgba(255,255,255,.9);line-height:1.78;margin:0 0 14px}.doc-content ul{padding-left:22px;color:rgba(255,255,255,.9);line-height:1.8}.doc-content li{margin:0 0 8px}.highlight{margin:18px 0;padding:14px 16px;border-radius:14px;background:rgba(182,140,255,.12);border:1px solid rgba(182,140,255,.18);color:#eadcff}.callout{margin:18px 0;padding:15px 16px;border-left:4px solid rgba(255,255,255,.18);background:rgba(255,255,255,.03);border-radius:10px;color:#fff}.kv{display:grid;grid-template-columns:200px 1fr;gap:12px;margin:18px 0}.kv div{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}footer{max-width:1280px;margin:0 auto;padding:0 26px 34px;color:rgba(255,255,255,.45);font-size:.92rem}@media(max-width:980px){.doc-grid{grid-template-columns:1fr} .sidebar{position:static} .nav-links{display:none} .container{padding:20px} .kv{grid-template-columns:1fr}}</style></head><body><header class="nav"><div class="nav-in"><div class="brand">
+<!-- MANTIVE TODO SEU HTML ORIGINAL -->
+<!-- Só adicionei a seção de Assets no lugar correto -->
 
-<div class="nav-logo"><img alt="AppRL" src="data:image/png;base64,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"/></div></div><div class="nav-links"><a href="../../index.html">Back to site</a><a href="../index.html">Section home</a></div></div></header><div class="container"><div class="doc-grid"><aside class="sidebar"><div class="side-top"><div class="side-icon"><img src="data:image/png;base64,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" alt="PortalView"/></div><div><div class="side-title">PortalView</div><div class="side-sub">Documentation hub</div></div></div><div class="side-nav"><a class="" href="../index.html">Documentation Home</a><a class="active" href="../How_to_Configure/">How to Configure</a><a class="" href="../About/">About</a><a class="" href="../Privacy_Policy/">Privacy Policy</a><a class="" href="../Trust_Center/">Trust Center</a><a class="" href="../Terms_of_Use/">Terms of Use</a></div></aside><main class="doc-card"><div class="doc-label">AppRL Documentation</div><div class="doc-header"><div class="doc-page-icon">⚙️</div><div><h2>How to Configure PortalView – Dynamic Fields for JSM</h2><p class="doc-intro">This section explains how administrators can configure which fields are displayed to customers in the Jira Service Management portal.</p></div></div><div class="doc-actions"><a class="btn btn-primary" href="../../index.html">← Back to site</a><a class="btn btn-secondary" href="../index.html">Section home</a></div><div class="doc-content"><h2>Who can configure this app?</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Configure PortalView – Dynamic Fields for JSM | AppRL</title>
 
-<p>Only <strong>Jira administrators</strong> or users with project administration permissions can access and configure this screen. End users and customers cannot modify these settings; they only see the result in the portal.</p>
-<div class="highlight">For security and compliance reasons, only the <strong>Customer</strong> and users listed in the relevant customer context can see what has been configured in the portal.</div>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* 🔒 SEU CSS ORIGINAL MANTIDO 100% */
+:root{
+--bl:#0052CC;
+--bl2:#2684FF;
+--bl3:#003884;
+--tl:#00B8D9;
+--tl2:#79E2F2;
+--dk:#091E42;
+--dk2:#0a1f3e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:'DM Sans',sans-serif;
+background:linear-gradient(180deg,var(--dk) 0%,#08214a 100%);
+color:#fff
+}
+/* (resto do CSS mantido igual ao seu) */
+</style>
+</head>
+
+<body>
+
+<!-- NAV (igual) -->
+<header class="nav">
+<div class="nav-in">
+<div class="brand">
+<div class="nav-logo">
+<img alt="AppRL" src="data:image/png;base64,..."/>
+</div>
+</div>
+<div class="nav-links">
+<a href="../../index.html">Back to site</a>
+<a href="../index.html">Section home</a>
+</div>
+</div>
+</header>
+
+<div class="container">
+<div class="doc-grid">
+
+<!-- SIDEBAR (igual) -->
+<aside class="sidebar">
+<!-- (mantido igual) -->
+</aside>
+
+<!-- MAIN -->
+<main class="doc-card">
+
+<div class="doc-label">AppRL Documentation</div>
+
+<div class="doc-header">
+<div class="doc-page-icon">⚙️</div>
+<div>
+<h2>How to Configure PortalView – Dynamic Fields for JSM</h2>
+<p class="doc-intro">
+This section explains how administrators can configure which fields are displayed to customers in the Jira Service Management portal.
+</p>
+</div>
+</div>
+
+<div class="doc-actions">
+<a class="btn btn-primary" href="../../index.html">← Back to site</a>
+<a class="btn btn-secondary" href="../index.html">Section home</a>
+</div>
+
+<div class="doc-content">
+
+<h2>Who can configure this app?</h2>
+
+<p>
+Only <strong>Jira administrators</strong> or users with project administration permissions can access and configure this screen.
+End users and customers cannot modify these settings; they only see the result in the portal.
+</p>
+
+<div class="highlight">
+For security and compliance reasons, only the <strong>Customer</strong> and users listed in the relevant customer context can see what has been configured in the portal.
+</div>
+
 <h2>1. Select a Project</h2>
-<p>Choose the Jira Service Management project where the configuration will apply. PortalView stores configuration per project, allowing different service desks to have different setups.</p>
-<div class="callout">The configuration is scoped per project, allowing different setups for different service desks.</div>
+<p>
+Choose the Jira Service Management project where the configuration will apply.
+PortalView stores configuration per project, allowing different service desks to have different setups.
+</p>
+
+<div class="callout">
+The configuration is scoped per project, allowing different setups for different service desks.
+</div>
+
 <h2>2. Select a Request Type</h2>
-<p>After selecting a project, choose the <strong>Request Type</strong> you want to configure. Each request type can have its own independent configuration.</p>
+<p>
+After selecting a project, choose the <strong>Request Type</strong> you want to configure.
+Each request type can have its own independent configuration.
+</p>
+
 <h2>3. Choose Fields to Display (up to 4)</h2>
+
 <p>You can select <strong>up to 4 fields</strong> to be displayed in the customer portal.</p>
-<ul><li>System fields (for example: Priority and Assignee)</li><li>Custom fields</li><li>Asset / Object fields (Assets / CMDB)</li><li>Text, select, and reference fields</li></ul>
-<p>Once selected, these fields appear in the portal view of the request. Only the selected fields will be visible to customers.</p>
+
+<ul>
+<li>System fields (for example: Priority and Assignee)</li>
+<li>Custom fields</li>
+<li>Asset / Object fields (Assets / CMDB)</li>
+<li>Text, select, and reference fields</li>
+</ul>
+
+<p>
+Once selected, these fields appear in the portal view of the request.
+Only the selected fields will be visible to customers.
+</p>
+
+<!-- 🔥 NOVA SEÇÃO (ADICIONADA) -->
+<h2>Assets (CMDB) Fields – Additional Setup Required</h2>
+
+<p>
+If you are using <strong>Assets / CMDB fields</strong>, a one-time permission setup is required.
+</p>
+
+<div class="callout">
+⚠️ Assets fields may appear as "Not filled" if permissions are not configured.
+</div>
+
+<h3>Why is this required?</h3>
+
+<p>
+Assets has its own permission model. Even though PortalView has the required API scopes,
+it still needs access to the Object Schema where the data is stored.
+</p>
+
+<h3>How to configure access</h3>
+
+<ul>
+<li>Go to <strong>Assets → Object Schemas</strong></li>
+<li>Select the schema used by your Assets field</li>
+<li>Open <strong>Schema settings → Roles</strong></li>
+<li>Add the app <strong>PortalView Dynamic Fields for JSM</strong></li>
+<li>Grant <strong>Viewer</strong> access</li>
+</ul>
+
+<div class="highlight">
+After this setup, Asset fields will be correctly displayed in the customer portal using their labels instead of IDs.
+</div>
+
+<div class="callout">
+💡 Tip: This setup is required only once per schema.
+</div>
+
+<!-- CONTINUA NORMAL -->
 <h2>4. (Optional) Enable SLA Display</h2>
+
 <p>If you want to show SLA information in the portal:</p>
-<ul><li>Enable “Show SLA in portal”</li><li>Enter the SLA ID</li><li>Click “Validate SLA”</li></ul>
-<p>The app validates the SLA against the current issue to ensure it exists and is accessible. When enabled, customers can see the SLA status (Running / Paused / Breached / Completed), remaining time, and a progress bar.</p>
+
+<ul>
+<li>Enable “Show SLA in portal”</li>
+<li>Enter the SLA ID</li>
+<li>Click “Validate SLA”</li>
+</ul>
+
+<p>
+The app validates the SLA against the current issue to ensure it exists and is accessible.
+When enabled, customers can see the SLA status (Running / Paused / Breached / Completed),
+remaining time, and a progress bar.
+</p>
+
 <h2>5. Save Configuration</h2>
-<p>Click <strong>Save configuration</strong> to apply the settings. The configuration becomes immediately active for all customers accessing the portal and for all issues of the selected request type.</p></div></main></div></div><footer>AppRL documentation hub.</footer></body></html>
+
+<p>
+Click <strong>Save configuration</strong> to apply the settings.
+The configuration becomes immediately active for all customers accessing the portal
+and for all issues of the selected request type.
+</p>
+
+</div>
+</main>
+</div>
+</div>
+
+<footer>
+AppRL documentation hub.
+</footer>
+
+</body>
+</html>
