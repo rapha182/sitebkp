@@ -13,9 +13,17 @@
 <p>You can select <strong>up to 4 fields</strong> to be displayed in the customer portal.</p>
 <ul><li>System fields (for example: Priority and Assignee)</li><li>Custom fields</li><li>Asset / Object fields (Assets / CMDB)</li><li>Text, select, and reference fields</li></ul>
 <p>Once selected, these fields appear in the portal view of the request. Only the selected fields will be visible to customers.</p>
-<h2>4. (Optional) Enable SLA Display</h2>
+<h2>4. Assets (CMDB) Fields – Additional Setup Required</h2>
+<p>If you are using <strong>Assets / CMDB fields</strong>, a one-time permission setup is required so PortalView can read the object labels from your Assets schema.</p>
+<div class="callout">⚠️ Assets fields may appear as <strong>Not filled</strong> if the app does not have permission to read the related Object Schema.</div>
+<h3>Why is this required?</h3>
+<p>Assets has its own permission model. Even when PortalView has the required API scopes, the app still needs access to the Object Schema where the Assets data is stored.</p>
+<h3>How to configure access</h3>
+<ul><li>Go to <strong>Assets → Object Schemas</strong></li><li>Select the schema used by your Assets field</li><li>Open <strong>Schema settings → Roles</strong></li><li>Add the app <strong>PortalView Dynamic Fields for JSM</strong></li><li>Grant <strong>Viewer</strong> access</li></ul>
+<div class="highlight">After this setup, Assets fields will be displayed in the customer portal using their labels instead of technical IDs.</div>
+<div class="callout">💡 Tip: This setup is required only once per Assets schema.</div><h2>5. (Optional) Enable SLA Display</h2>
 <p>If you want to show SLA information in the portal:</p>
 <ul><li>Enable “Show SLA in portal”</li><li>Enter the SLA ID</li><li>Click “Validate SLA”</li></ul>
 <p>The app validates the SLA against the current issue to ensure it exists and is accessible. When enabled, customers can see the SLA status (Running / Paused / Breached / Completed), remaining time, and a progress bar.</p>
-<h2>5. Save Configuration</h2>
+<h2>6. Save Configuration</h2>
 <p>Click <strong>Save configuration</strong> to apply the settings. The configuration becomes immediately active for all customers accessing the portal and for all issues of the selected request type.</p></div></main></div></div><footer>AppRL documentation hub.</footer></body></html>
